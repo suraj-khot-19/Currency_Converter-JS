@@ -1,9 +1,11 @@
-/*
+/* Reset default margin and padding for all elements */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body styling */
 body {
     display: flex;
     justify-content: center;
@@ -12,34 +14,55 @@ body {
     background-color: bisque;
 }
 
+/* Container styling */
 .container {
     border-radius: 1.3rem;
     border: 0.5px solid black;
     background-color: white;
     padding: 2rem;
     min-height: 40vh;
-    width: 40vh;
+    width: 80%;
+    /* Adjusted width to be fluid */
+    max-width: 500px;
 }
 
+/* Header styling inside container */
 .container h2 {
     text-align: center;
     text-shadow: 2px 2px 5px rgba(2, 242, 255, 0.584);
     font-weight: bolder;
+    font-size: 2rem;
+    /* Responsive font size */
 }
 
+@media (max-width: 768px) {
+    .container h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Form styling */
 form {
     margin: 2rem 0 0.1rem 0;
 }
 
+/* Input, select, and button styling */
 form input,
 select,
 button {
     width: 100%;
     outline: none;
     border: none;
-    border-radius: 0.80rem;
+    border-radius: 0.8rem;
 }
 
+/* Input field styling */
 form input {
     border: 1px solid rgba(255, 1, 175, 0.436);
     padding-left: 0.5rem;
@@ -48,45 +71,75 @@ form input {
     font-size: 1rem;
 }
 
+/* Dropdown styling */
 .dropdown {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 1.5rem;
+    gap: 1rem;
 }
 
 .dropdown i {
-    margin-top: 1rem;
     font-size: 1rem;
 }
 
+/* Select container styling */
 .select-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 6rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 200px;
     border-radius: 0.5rem;
     border: 1px solid #663399;
     padding: 0.5rem;
     margin-top: 0.5rem;
+    box-sizing: border-box;
 }
 
 .select-container select {
-    width: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .select-container img {
-    max-width: 2rem;
+    max-width: 100%;
+    height: auto;
 }
 
+@media (max-width: 768px) {
+    .select-container {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: none;
+    }
+
+    .select-container img {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .select-container {
+        padding: 0.3rem;
+    }
+
+    .select-container select {
+        font-size: 0.9rem;
+    }
+}
+
+/* Message styling */
 .message {
-    margin: 1rem 0 1rem 0;
+    margin: 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: large;
 }
 
+/* Button styling */
 button {
     background-color: plum;
     height: 2.3rem;
@@ -95,8 +148,7 @@ button {
     font-weight: bold;
 }
 
+/* Icon styling */
 i {
     cursor: pointer;
 }
-
-*/
